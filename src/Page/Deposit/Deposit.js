@@ -60,15 +60,19 @@ getfunctiondata ()
       date : utc
     }
     var response = await axios.post(`https://bankreference.herokuapp.com/deposit/date`,dates).then((res) => { return res.data})
-    setcount(response)
+    var filterres = response.filter((item) => { return item.accountnumber == userid})
+    console.log(filterres,userid)
+    setcount(filterres)
   }
-  
+
+
+  console.log(count)
   
   const deposithandler = async() => {
     
   
   
-    if(count.length <= 3){
+    if(count.length < 3){
       if(amount >= 500 && amount <= 50000){
         var response  = await axios.post(`https://bankreference.herokuapp.com/deposit`,data).then((res) => { return res.data})
         console.log(response)
@@ -130,7 +134,7 @@ getfunctiondata ()
             Welcome {getdata.name} 
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Your deposit successfull. And your Balance is  {getdata.balance}
+            Your amount is deposit successfull. And your Balance is  {getdata.balance}
 
           </Typography>
         </Box>

@@ -73,7 +73,7 @@ const Transfer = () => {
             }
           
           }else {
-            alert("Pleasse enter the valid account number")
+            alert("Pleasse enter the valid four digit account number")
           }
        
            }
@@ -106,6 +106,7 @@ const Transfer = () => {
                     <th>From AC/NO</th>
                     <th>Target AC/No</th>
                     <th>Amount</th>
+                    <th>Date</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -116,6 +117,7 @@ const Transfer = () => {
                         <td>{item.accountnumber}</td>
                         <td>{item.targetaccount}</td>
                         <td>{item.amount}</td>
+                        <td>{item.date}</td>
                         <td>success</td>
                     </tr>
                     ))
