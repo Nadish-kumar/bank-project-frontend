@@ -21,7 +21,7 @@ const Accountdetails = () => {
   }
   
   const getalldata =async () => {
-  var response = await axios.post(`http://localhost:5001/account/acc`,data).then((res) => { return res.data})
+  var response = await axios.post(`https://bankreference.herokuapp.com/account/acc`,data).then((res) => { return res.data})
   setaccountdetails(response)
   }
   

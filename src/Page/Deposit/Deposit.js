@@ -53,12 +53,12 @@ getfunctiondata ()
    var iduser = {
       accountnumber : userid
     }
-    var getdate = await axios.post(`http://localhost:5001/account/acc`,iduser).then((res) => { return res.data})
+    var getdate = await axios.post(`https://bankreference.herokuapp.com/account/acc`,iduser).then((res) => { return res.data})
     setgetdata(getdate)
     var dates = {
       date : utc
     }
-    var response = await axios.post(`http://localhost:5001/deposit/date`,dates).then((res) => { return res.data})
+    var response = await axios.post(`https://bankreference.herokuapp.com/deposit/date`,dates).then((res) => { return res.data})
     setcount(response)
   }
   
@@ -67,14 +67,14 @@ getfunctiondata ()
     var current  ={
       accountnumber : accnumber
     }
-    var res = await axios.post(`http://localhost:5001/account/acc`,current).then((res) => { return res.data})
+    var res = await axios.post(`https://bankreference.herokuapp.com/account/acc`,current).then((res) => { return res.data})
 
  if(res.accountnumber == accnumber) {
   
   if(getdata.balance > amount){
     if(count.length <= 3){
       if(amount >= 500 && amount <= 50000){
-        var response  = await axios.post(`http://localhost:5001/deposit`,data).then((res) => { return res.data})
+        var response  = await axios.post(`https://bankreference.herokuapp.com/deposit`,data).then((res) => { return res.data})
         console.log(response)
         var updatebalance = getdata.balance - amount
         const updatedate = {
@@ -83,7 +83,7 @@ getfunctiondata ()
         }
         
         console.log(updatedate)
-        var update = await axios.put(`http://localhost:5001/account/update`,updatedate).then((res) => { return res.data})
+        var update = await axios.put(`https://bankreference.herokuapp.com/account/update`,updatedate).then((res) => { return res.data})
         getfunctiondata()
         setOpen(true)
        
@@ -92,7 +92,7 @@ getfunctiondata ()
       accountnumber : accnumber,
       balance : addedamount
     }
-    var updateamount = await axios.put(`http://localhost:5001/account/added`,addedupgrade).then((res) => { return res.data})
+    var updateamount = await axios.put(`https://bankreference.herokuapp.com/account/added`,addedupgrade).then((res) => { return res.data})
     console.log(updateamount)
       }else if(amount >= 500 ){
         alert("the maxminum deposit amount is 50000")

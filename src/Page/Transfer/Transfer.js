@@ -21,10 +21,10 @@ const Transfer = () => {
             var iduser = {
                accountnumber : userid
              }
-             var getdate = await axios.post(`http://localhost:5001/account/acc`,iduser).then((res) => { return res.data})
+             var getdate = await axios.post(`https://bankreference.herokuapp.com/account/acc`,iduser).then((res) => { return res.data})
              setgetdata(getdate)
            
-             var getdeposit = await axios.post(`http://localhost:5001/deposit/detail`,iduser).then((res) => { return res.data})
+             var getdeposit = await axios.post(`https://bankreference.herokuapp.com/deposit/detail`,iduser).then((res) => { return res.data})
              setdeposit(getdeposit)
            }
        

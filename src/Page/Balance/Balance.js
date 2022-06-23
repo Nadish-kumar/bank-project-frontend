@@ -31,7 +31,7 @@ const Balance = () => {
     var data = {
       accountnumber : account
     }
-    var response  =await axios.post(`http://localhost:5001/account/acc`,data).then((res) => { return res.data})
+    var response  =await axios.post(`https://bankreference.herokuapp.com/account/acc`,data).then((res) => { return res.data})
     setoneaccount(response)
     setOpen(true)
   }

@@ -18,7 +18,7 @@ const Defaultaccount = () => {
     }
     console.log(data)
 
-  var response  =await axios.post(`http://localhost:5001/account/acc`,data).then((res) => { return res.data})
+  var response  =await axios.post(`https://bankreference.herokuapp.com/account/acc`,data).then((res) => { return res.data})
   setoneaccount(response)
   sessionStorage.setItem("accountnumber", response.accountnumber);
   if(response.accountnumber == accnumber){

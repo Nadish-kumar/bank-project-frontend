@@ -47,13 +47,13 @@ const Withdrawal = () => {
         var iduser = {
            accountnumber : userid
          }
-         var getdate = await axios.post(`http://localhost:5001/account/acc`,iduser).then((res) => { return res.data})
+         var getdate = await axios.post(`https://bankreference.herokuapp.com/account/acc`,iduser).then((res) => { return res.data})
          setgetdata(getdate)
          setaccamount(getdate.accountnumber)
          var dates = {
           date : utc
         }
-        var response = await axios.post(`http://localhost:5001/with/date`,dates).then((res) => { return res.data})
+        var response = await axios.post(`https://bankreference.herokuapp.com/with/date`,dates).then((res) => { return res.data})
         setcount(response)
         }
 
@@ -63,14 +63,14 @@ console.log(getdata)
     if(getdata.balance > amount) {
        if(count.length <= 3){
            if(amount >=1000 && amount <= 25000){
-            var response  = await axios.post(`http://localhost:5001/with`,data).then((res) => { return res.data})
+            var response  = await axios.post(`https://bankreference.herokuapp.com/with`,data).then((res) => { return res.data})
             console.log(response)
             var updatebalance = getdata.balance - parseInt(amount)
             const updatedate = {
               balance : updatebalance,
               accountnumber : userid
             }
-            var update = await axios.put(`http://localhost:5001/account/update`,updatedate).then((res) => { return res.data})
+            var update = await axios.put(`https://bankreference.herokuapp.com/account/update`,updatedate).then((res) => { return res.data})
             getfunctiondata()
             setOpen(true)
            }else if(amount >= 1000) {
