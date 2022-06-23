@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import axios from  "axios"
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -22,6 +23,7 @@ const style = {
 
 const Createaccount = () => {
 
+const navigate = useNavigate()
 
   const [open, setOpen] = useState(false);
   const [accnumber, setaccnumber] = useState("")
@@ -49,6 +51,7 @@ console.log(utc)
  setOpen(true)
  setaccnumber(response.accountnumber)
  sessionStorage.setItem("accountnumber", response.accountnumber);
+ navigate("/main")
   }
  
 
@@ -59,7 +62,7 @@ console.log(accnumber)
         <h3 className='heading'>Create a Account</h3>
         <div className='labelref'>
         <label>Enter your Name : </label>
-        <input type="text" onChange={(e) => setname(e.target.value)}/>
+        <input type="text" size="50" onChange={(e) => setname(e.target.value)}/>
         </div>
         <div>
             <button className='button__rect'  onClick={openaccount}>Create a Account</button>

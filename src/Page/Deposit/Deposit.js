@@ -126,7 +126,7 @@ getfunctiondata ()
         <h1 className='heading'>Deposit your amount here</h1>
         <div className='labelref'>
         <label className='label__for'>Enter your Account No : </label>
-        <input type="text" value={accnumber} onChange={(e) => setaccnumber(e.target.value)}/>
+        <input type="text" maxlength="4" size="4" value={accnumber} onChange={(e) => setaccnumber(e.target.value)}/>
         </div>
         <div>
             <label className='label__for'>Enter the Amount :</label>

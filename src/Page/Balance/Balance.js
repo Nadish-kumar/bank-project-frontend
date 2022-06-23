@@ -42,7 +42,7 @@ const Balance = () => {
         <h1 className='heading'>Account Balance </h1>
         <div className='labelref'>
         <label className='label__for'>Enter your Account No : </label>
-        <input type="text" onChange={(e) => setaccount(e.target.value)}/>
+        <input type="text" maxlength="4" size="4" onChange={(e) => setaccount(e.target.value)}/>
         </div>
        
         <button className='button__rect' onClick={balancehandler}>Check Balance</button>

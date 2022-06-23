@@ -35,7 +35,7 @@ const Defaultaccount = () => {
         <h3 className='heading'>Welcome to our Bank</h3>
         <div className='labelref'>
         <label>Enter your Account no : </label>
-        <input type="text" onChange={(e) =>setaccnumber(e.target.value)}/>
+        <input type="text" maxlength="4" size="4" onChange={(e) =>setaccnumber(e.target.value)}/>
         </div>
         <div>
             <button className='button__rect' onClick={loginhandler}>Login</button>

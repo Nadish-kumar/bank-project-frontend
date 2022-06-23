@@ -2,12 +2,31 @@ import React from 'react'
 import "./Maincontent.css"
 import logo from "../../assest/logo.png"
 import { Link } from 'react-router-dom'
+import { useState,useEffect } from 'react'
+import axios from "axios"
+
 const Maincontent = () => {
+  const [getdata, setgetdata] = useState([])
+  useEffect(() => {
+    getfunctiondata ()
+      }, [])
+
+      var userid = sessionStorage.getItem("accountnumber")
+
+      const getfunctiondata =async() => {
+        var iduser = {
+           accountnumber : userid
+         }
+         var getdate = await axios.post(`https://bankreference.herokuapp.com/account/acc`,iduser).then((res) => { return res.data})
+         setgetdata(getdate)
+       
+     
+       }
   return (
     <>
     <div>
         <img src={logo} alt="ref__image" />
-        <h1 className='heading'>Welcome Nadish</h1>
+        <h1 className='heading'>Welcome {getdata.name}</h1>
         <h4>Happy to see you Again</h4>
     </div>
     <div className='main__box'>

@@ -92,7 +92,7 @@ console.log(getdata)
         <h1 className='heading'>Withdrawal your amount</h1>
         <div className='labelref'>
         <label className='label__for'>Enter your Account No : </label>
-        <input type="text" value={accamount} onChange={(e) => setaccamount(e.target.value)}/>
+        <input type="text" maxlength="4" size="4" value={accamount} onChange={(e) => setaccamount(e.target.value)}/>
         </div>
         <div>
             <label className='label__for'>Enter the Amount :</label>
