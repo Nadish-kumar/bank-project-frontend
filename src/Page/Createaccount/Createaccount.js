@@ -28,7 +28,10 @@ const navigate = useNavigate()
   const [open, setOpen] = useState(false);
   const [accnumber, setaccnumber] = useState("")
   
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false)
+    navigate("/main")
+  };
 
   const [name, setname] = useState("")
    const [balance, setbalance] = useState(1000)
@@ -51,7 +54,7 @@ console.log(utc)
  setOpen(true)
  setaccnumber(response.accountnumber)
  sessionStorage.setItem("accountnumber", response.accountnumber);
- navigate("/main")
+
   }
  
 

@@ -55,6 +55,7 @@ getfunctiondata ()
     }
     var getdate = await axios.post(`https://bankreference.herokuapp.com/account/acc`,iduser).then((res) => { return res.data})
     setgetdata(getdate)
+    setaccnumber(getdate.accountnumber)
     var dates = {
       date : utc
     }
@@ -64,19 +65,14 @@ getfunctiondata ()
   
   
   const deposithandler = async() => {
-    var current  ={
-      accountnumber : accnumber
-    }
-    var res = await axios.post(`https://bankreference.herokuapp.com/account/acc`,current).then((res) => { return res.data})
-
- if(res.accountnumber == accnumber) {
+    
   
-  if(getdata.balance > amount){
+  
     if(count.length <= 3){
       if(amount >= 500 && amount <= 50000){
         var response  = await axios.post(`https://bankreference.herokuapp.com/deposit`,data).then((res) => { return res.data})
         console.log(response)
-        var updatebalance = getdata.balance - amount
+        var updatebalance = getdata.balance + parseInt(amount)
         const updatedate = {
           balance : updatebalance,
           accountnumber : userid
@@ -87,13 +83,7 @@ getfunctiondata ()
         getfunctiondata()
         setOpen(true)
        
-    var addedamount = parseInt(res.balance) + parseInt(amount)
-    var addedupgrade = {
-      accountnumber : accnumber,
-      balance : addedamount
-    }
-    var updateamount = await axios.put(`https://bankreference.herokuapp.com/account/added`,addedupgrade).then((res) => { return res.data})
-    console.log(updateamount)
+
       }else if(amount >= 500 ){
         alert("the maxminum deposit amount is 50000")
    }else{
@@ -104,12 +94,8 @@ getfunctiondata ()
       alert("Your deposit limit is over")
     }
   
-   }else {
-    alert("Your account balance is too low")
-   }
- }else{
-  alert("Please enter the valid account number")
- }
+   
+
   
  
 
