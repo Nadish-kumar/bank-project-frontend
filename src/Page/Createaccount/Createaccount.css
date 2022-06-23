@@ -1,0 +1,12 @@
+.container{
+    max-width : 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+.heading{
+    color: #00BFFF;
+    margin-top: 20px;
+}
+.labelref{
+    margin-top: 20px;
+}

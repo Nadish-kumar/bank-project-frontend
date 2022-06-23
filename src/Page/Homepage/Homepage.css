@@ -1,0 +1,19 @@
+.button__rect{
+    background-color: lightblue;
+    border: none;
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+.button__rect:hover{
+    background-color: #00BFFF;
+    transition: 0.2s ease-in-out;
+}
+
+.pic__ref{
+    margin-top: 40px;
+}
