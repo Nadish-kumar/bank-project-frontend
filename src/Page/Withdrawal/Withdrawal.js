@@ -110,7 +110,7 @@ console.log(getdata)
             Welcome {getdata.name} 
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Your deposit successfull. And your Balance is  {getdata.balance}
+            Your Withdrawal successfull. And your Balance is  {getdata.balance}
 
           </Typography>
         </Box>
