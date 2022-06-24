@@ -54,7 +54,8 @@ const Withdrawal = () => {
           date : utc
         }
         var response = await axios.post(`https://bankreference.herokuapp.com/with/date`,dates).then((res) => { return res.data})
-        setcount(response)
+        var filterres = response.filter((item) => { return item.accountnumber == userid})
+        setcount(filterres)
         }
 
 console.log(getdata)
