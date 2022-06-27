@@ -62,7 +62,7 @@ console.log(getdata)
 
   const withdrawalhandler =async () => {
     if(getdata.balance > amount) {
-       if(count.length <= 3){
+       if(count.length < 3){
            if(amount >=1000 && amount <= 25000){
             var response  = await axios.post(`https://bankreference.herokuapp.com/with`,data).then((res) => { return res.data})
             console.log(response)

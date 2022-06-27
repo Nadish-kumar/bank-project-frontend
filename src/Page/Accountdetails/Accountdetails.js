@@ -11,7 +11,7 @@ const Accountdetails = () => {
  
   useEffect(() => {
     getalldata()
-  }, [])
+  }, [accountdetails])
 
   const userid = sessionStorage.getItem("accountnumber")
  
